@@ -24,6 +24,18 @@ namespace pjGestionEmpleados.Presentacion
         {
             D_Empleados Datos = new D_Empleados();
             dgvLista.DataSource = Datos.Listar_Empleados(cBusqueda);
+            FormatoListaEmpleados();
+        }
+
+        private void FormatoListaEmpleados()
+        {
+            dgvLista.Columns[0].Width = 45;
+            dgvLista.Columns[1].Width = 160;
+            dgvLista.Columns[2].Width = 160;
+            dgvLista.Columns[5].Width = 250;
+            dgvLista.Columns[6].Width = 110;
+            dgvLista.Columns[7].Width = 160;
+
         }
 
         #endregion
