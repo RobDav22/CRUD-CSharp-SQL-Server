@@ -95,6 +95,22 @@ namespace pjGestionEmpleados.Presentacion
             dtpFechaNacimiento.Value = Convert.ToDateTime(dgvLista.CurrentRow.Cells["Fecha de nacimiento"].Value);
         }
 
+        private void Limpiar()
+        {
+            txtNombre.Clear();
+            txtDireccion.Clear();
+            txtTelefono.Clear();
+            txtSalario.Clear();
+            txtBuscar.Clear();
+
+            cmbDepartamento.SelectedIndex = -1;
+            cmbCargo.SelectedIndex = -1;
+
+            dtpFechaNacimiento.Value = DateTime.Now;
+
+            iCodigoEmpleado = 0;
+        }
+
         #endregion
 
         private void frmEmpleados_Load(object sender, EventArgs e)
@@ -113,6 +129,7 @@ namespace pjGestionEmpleados.Presentacion
         {
             ActivarTextos(true);
             ActivarBotones(false);
+            Limpiar();
 
             txtNombre.Select();
         }
@@ -121,11 +138,29 @@ namespace pjGestionEmpleados.Presentacion
         {
             ActivarTextos(false);
             ActivarBotones(true);
+
+            Limpiar();
         }
 
         private void dgvLista_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             SeleccionarEmpleado();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if(iCodigoEmpleado == 0)
+            {
+                MessageBox.Show("Selecciona un registro", "Sistema de Gestión de Empleados", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            else
+            {
+                ActivarTextos(true);
+                ActivarBotones(false);
+
+                txtNombre.Select();
+            }
         }
     }
 }
