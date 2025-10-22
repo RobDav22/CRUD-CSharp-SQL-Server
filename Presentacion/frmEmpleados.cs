@@ -1,5 +1,6 @@
 ﻿using pjGestionEmpleados.Datos;
 using pjGestionEmpleados.Entidades;
+using pjGestionEmpleados.Presentacion.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -309,6 +310,13 @@ namespace pjGestionEmpleados.Presentacion
                     Desactivar_Empleados(iCodigoEmpleado);
                 }
             }
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            frmReporteEmpleados formReporteEmpleados = new frmReporteEmpleados();
+            formReporteEmpleados.txtFiltrar.Text = txtBuscar.Text;
+            formReporteEmpleados.ShowDialog();
         }
     }
 }
