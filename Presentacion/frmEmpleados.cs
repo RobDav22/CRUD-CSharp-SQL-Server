@@ -20,6 +20,7 @@ namespace pjGestionEmpleados.Presentacion
         }
         #region "Variables"
         int iCodigoEmpleado = 0;
+        bool bEstadoGuardar = true;
         #endregion
 
         #region "Métodos"
@@ -144,6 +145,39 @@ namespace pjGestionEmpleados.Presentacion
             }
         }
 
+        private void Actualizar_Empleados()
+        {
+            E_Empleado Empleado = new E_Empleado();
+
+            Empleado.ID_Empleado = iCodigoEmpleado;
+            Empleado.Nombre_Empleado = txtNombre.Text;
+            Empleado.Direccion_Empleado = txtDireccion.Text;
+            Empleado.Telefono_Empleado = txtTelefono.Text;
+            Empleado.Salario_Empleado = Convert.ToDecimal(txtSalario.Text);
+            Empleado.Fecha_Nacimiento_Empleado = dtpFechaNacimiento.Value;
+            Empleado.ID_Departamento = Convert.ToInt32(cmbDepartamento.SelectedValue);
+            Empleado.ID_Cargo = Convert.ToInt32(cmbCargo.SelectedValue);
+
+            D_Empleados Datos = new D_Empleados();
+            string respuesta = Datos.Actualizar_Empleado(Empleado);
+
+            if (respuesta == "OK")
+            {
+                CargarEmpleados("%");
+                Limpiar();
+                ActivarTextos(false);
+                ActivarBotones(true);
+
+                MessageBox.Show("¡Datos Actualizados Correctamente!", "Sistema Gestión de Empleados", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(respuesta, "Sistema Gestión de Empleados", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
+
         private bool Validar_Textos()
         {
             bool hayTextosVacios = false;
@@ -171,6 +205,9 @@ namespace pjGestionEmpleados.Presentacion
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
+            bEstadoGuardar = true;
+            iCodigoEmpleado = 0;
+
             ActivarTextos(true);
             ActivarBotones(false);
             Limpiar();
@@ -180,6 +217,9 @@ namespace pjGestionEmpleados.Presentacion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            bEstadoGuardar = true;
+            iCodigoEmpleado = 0;
+
             ActivarTextos(false);
             ActivarBotones(true);
 
@@ -200,6 +240,8 @@ namespace pjGestionEmpleados.Presentacion
             }
             else
             {
+                bEstadoGuardar = false;
+
                 ActivarTextos(true);
                 ActivarBotones(false);
 
@@ -216,7 +258,14 @@ namespace pjGestionEmpleados.Presentacion
             }
             else
             {
-                Guardar_Empleados();
+                if (bEstadoGuardar == true)
+                {
+                    Guardar_Empleados();
+                }
+                else
+                {
+                    Actualizar_Empleados();
+                }
             }
         }
     }
