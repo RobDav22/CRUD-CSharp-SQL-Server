@@ -44,5 +44,15 @@ namespace pjGestionEmpleados.Presentacion
         {
             CargarEmpleados("%");
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CargarEmpleados(txtBuscar.Text);
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            CargarEmpleados(txtBuscar.Text);
+        }
     }
 }
