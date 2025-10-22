@@ -94,6 +94,7 @@
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -111,6 +112,7 @@
             // btnReporte
             // 
             this.btnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(203)))), ((int)(((byte)(152)))));
+            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReporte.FlatAppearance.BorderSize = 0;
             this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReporte.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,7 +121,7 @@
             this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReporte.Location = new System.Drawing.Point(28, 412);
             this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnReporte.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnReporte.Size = new System.Drawing.Size(155, 52);
             this.btnReporte.TabIndex = 24;
             this.btnReporte.Text = "Reporte";
@@ -129,14 +131,16 @@
             // btnActualizar
             // 
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(203)))), ((int)(((byte)(152)))));
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
             this.btnActualizar.Image = ((System.Drawing.Image)(resources.GetObject("btnActualizar.Image")));
             this.btnActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnActualizar.Location = new System.Drawing.Point(28, 280);
             this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnActualizar.Size = new System.Drawing.Size(155, 52);
             this.btnActualizar.TabIndex = 23;
             this.btnActualizar.Text = "Actualizar";
@@ -146,6 +150,7 @@
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(203)))), ((int)(((byte)(152)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -154,7 +159,7 @@
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.Location = new System.Drawing.Point(28, 346);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.btnEliminar.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.btnEliminar.Size = new System.Drawing.Size(155, 52);
             this.btnEliminar.TabIndex = 22;
             this.btnEliminar.Text = "Eliminar";
@@ -164,6 +169,7 @@
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(203)))), ((int)(((byte)(152)))));
+            this.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNuevo.FlatAppearance.BorderSize = 0;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,6 +183,7 @@
             this.btnNuevo.TabIndex = 21;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // panel2
             // 
@@ -292,6 +299,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(198, 164);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(388, 32);
@@ -299,6 +307,7 @@
             // 
             // dtpFechaNacimiento
             // 
+            this.dtpFechaNacimiento.Enabled = false;
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(824, 164);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
@@ -307,6 +316,7 @@
             // 
             // txtDireccion
             // 
+            this.txtDireccion.Enabled = false;
             this.txtDireccion.Location = new System.Drawing.Point(198, 214);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(780, 32);
@@ -314,6 +324,7 @@
             // 
             // txtSalario
             // 
+            this.txtSalario.Enabled = false;
             this.txtSalario.Location = new System.Drawing.Point(639, 260);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(339, 32);
@@ -322,6 +333,7 @@
             // cmbCargo
             // 
             this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargo.Enabled = false;
             this.cmbCargo.FormattingEnabled = true;
             this.cmbCargo.Location = new System.Drawing.Point(639, 306);
             this.cmbCargo.Name = "cmbCargo";
@@ -352,6 +364,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.DarkRed;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -366,10 +379,13 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(203)))), ((int)(((byte)(152)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,6 +400,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Visible = false;
             // 
             // btnBuscar
             // 
@@ -403,6 +420,7 @@
             // 
             // txtTelefono
             // 
+            this.txtTelefono.Enabled = false;
             this.txtTelefono.Location = new System.Drawing.Point(198, 260);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(339, 32);
@@ -411,6 +429,7 @@
             // cmbDepartamento
             // 
             this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDepartamento.Enabled = false;
             this.cmbDepartamento.FormattingEnabled = true;
             this.cmbDepartamento.Location = new System.Drawing.Point(198, 303);
             this.cmbDepartamento.Name = "cmbDepartamento";

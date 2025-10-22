@@ -55,6 +55,30 @@ namespace pjGestionEmpleados.Presentacion
             cmbCargo.SelectedIndex = -1;
         }
 
+        private void ActivarTextos(bool bEstado)
+        {
+            txtNombre.Enabled = bEstado;
+            txtDireccion.Enabled = bEstado;
+            txtTelefono.Enabled = bEstado;
+            txtSalario.Enabled = bEstado;
+            cmbDepartamento.Enabled = bEstado;
+            cmbCargo.Enabled = bEstado;
+            dtpFechaNacimiento.Enabled = bEstado;
+
+            txtBuscar.Enabled = !bEstado;
+        }
+
+        private void ActivarBotones(bool bEstado)
+        {
+            btnNuevo.Enabled = bEstado;
+            btnActualizar.Enabled = bEstado;
+            btnEliminar.Enabled = bEstado;
+            btnReporte.Enabled = bEstado;
+
+            btnGuardar.Visible = !bEstado;
+            btnCancelar .Visible = !bEstado;
+        }
+
         #endregion
 
         private void frmEmpleados_Load(object sender, EventArgs e)
@@ -67,6 +91,20 @@ namespace pjGestionEmpleados.Presentacion
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             CargarEmpleados(txtBuscar.Text);
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            ActivarTextos(true);
+            ActivarBotones(false);
+
+            txtNombre.Select();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            ActivarTextos(false);
+            ActivarBotones(true);
         }
     }
 }
