@@ -178,6 +178,29 @@ namespace pjGestionEmpleados.Presentacion
             }
         }
 
+        private void Desactivar_Empleados(int iCodigoEmpleado)
+        {
+            D_Empleados Datos = new D_Empleados();
+            string respuesta = Datos.Desactivar_Empleado(iCodigoEmpleado);
+
+            if (respuesta == "OK")
+            {
+                CargarEmpleados("%");
+                Limpiar();
+                ActivarTextos(false);
+                ActivarBotones(true);
+
+                MessageBox.Show("Registro Eliminado Correctamente", "Sistema Gestión de Empleados", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(respuesta, "Sistema Gestión de Empleados", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
+
+
         private bool Validar_Textos()
         {
             bool hayTextosVacios = false;
@@ -265,6 +288,25 @@ namespace pjGestionEmpleados.Presentacion
                 else
                 {
                     Actualizar_Empleados();
+                }
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (iCodigoEmpleado == 0)
+            {
+                MessageBox.Show("Selecciona un registro", "Sistema de Gestión de Empleados", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            else
+            {
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de eliminar este registro?", "Sistema de Gestión de Empleados", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Information);
+
+                if (resultado == DialogResult.Yes) 
+                {
+                    Desactivar_Empleados(iCodigoEmpleado);
                 }
             }
         }

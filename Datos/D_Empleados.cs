@@ -113,5 +113,33 @@ namespace pjGestionEmpleados.Datos
             return respuesta;
         }
 
+        public string Desactivar_Empleado(int iCodigoEmpleado)
+        {
+            string respuesta = "";
+            SqlConnection SqlCon = new SqlConnection();
+
+            try
+            {
+                SqlCon = Conexion.crearInstancia().CrearConexion();
+                SqlCommand comando = new SqlCommand("SP_DESACTIVAR_EMPLEADOS", SqlCon);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.Add("@nIdEmpleado", SqlDbType.Int).Value = iCodigoEmpleado;
+
+                SqlCon.Open();
+
+                respuesta = comando.ExecuteNonQuery() >= 1 ? "OK" : "Los datos no se pudieron registrar";
+            }
+            catch (Exception ex)
+            {
+                respuesta = ex.Message;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
+            }
+
+            return respuesta;
+        }
     }
 }
