@@ -1,4 +1,5 @@
 ﻿using pjGestionEmpleados.Datos;
+using pjGestionEmpleados.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,6 +112,49 @@ namespace pjGestionEmpleados.Presentacion
             iCodigoEmpleado = 0;
         }
 
+        private void Guardar_Empleados()
+        {
+            E_Empleado Empleado = new E_Empleado();
+            
+            Empleado.Nombre_Empleado = txtNombre.Text;
+            Empleado.Direccion_Empleado = txtDireccion.Text;
+            Empleado.Telefono_Empleado = txtTelefono.Text;
+            Empleado.Salario_Empleado = Convert.ToDecimal(txtSalario.Text);
+            Empleado.Fecha_Nacimiento_Empleado = dtpFechaNacimiento.Value;
+            Empleado.ID_Departamento = Convert.ToInt32(cmbDepartamento.SelectedValue);
+            Empleado.ID_Cargo = Convert.ToInt32(cmbCargo.SelectedValue);
+
+            D_Empleados Datos = new D_Empleados();
+            string respuesta = Datos.Guardar_Empleado(Empleado);
+
+            if (respuesta == "OK")
+            {
+                CargarEmpleados("%");
+                Limpiar();
+                ActivarTextos(false);
+                ActivarBotones(true);
+
+                MessageBox.Show("¡Datos Guardados Correctamente!", "Sistema Gestión de Empleados", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show(respuesta, "Sistema Gestión de Empleados", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+        }
+
+        private bool Validar_Textos()
+        {
+            bool hayTextosVacios = false;
+
+            if(string.IsNullOrEmpty(txtNombre.Text)) hayTextosVacios = true;
+            if(string.IsNullOrEmpty(txtTelefono.Text)) hayTextosVacios = true;
+            if(string.IsNullOrEmpty(txtSalario.Text)) hayTextosVacios = true;
+
+            return hayTextosVacios;
+        }
+
         #endregion
 
         private void frmEmpleados_Load(object sender, EventArgs e)
@@ -160,6 +204,19 @@ namespace pjGestionEmpleados.Presentacion
                 ActivarBotones(false);
 
                 txtNombre.Select();
+            }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if(Validar_Textos())
+            {
+                MessageBox.Show("Hay campos vacios, debes llenar todos los campos (*) obligatorios", "Sistema Gestión de Empleados", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                Guardar_Empleados();
             }
         }
     }

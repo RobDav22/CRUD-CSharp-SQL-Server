@@ -50,6 +50,7 @@
     <Compile Include="Datos\D_Cargos.cs" />
     <Compile Include="Datos\D_Departamentos.cs" />
     <Compile Include="Datos\D_Empleados.cs" />
+    <Compile Include="Entidades\E_Empleado.cs" />
     <Compile Include="Presentacion\frmConectar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,8 +93,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
