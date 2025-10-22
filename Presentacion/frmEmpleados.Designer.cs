@@ -321,6 +321,7 @@
             // 
             // cmbCargo
             // 
+            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCargo.FormattingEnabled = true;
             this.cmbCargo.Location = new System.Drawing.Point(639, 306);
             this.cmbCargo.Name = "cmbCargo";
@@ -409,6 +410,7 @@
             // 
             // cmbDepartamento
             // 
+            this.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDepartamento.FormattingEnabled = true;
             this.cmbDepartamento.Location = new System.Drawing.Point(198, 303);
             this.cmbDepartamento.Name = "cmbDepartamento";

@@ -35,7 +35,24 @@ namespace pjGestionEmpleados.Presentacion
             dgvLista.Columns[5].Width = 250;
             dgvLista.Columns[6].Width = 110;
             dgvLista.Columns[7].Width = 160;
+        }
 
+        private void CargarDepartamentos()
+        {
+            D_Departamentos Datos = new D_Departamentos();
+            cmbDepartamento.DataSource = Datos.Listar_Departamentos();
+            cmbDepartamento.ValueMember = "id_departamento";
+            cmbDepartamento.DisplayMember = "nombre_departamento";
+            cmbDepartamento.SelectedIndex = -1;
+        }
+
+        private void CargarCargos()
+        {
+            D_Cargos Datos = new D_Cargos();
+            cmbCargo.DataSource = Datos.Listar_Cargos();
+            cmbCargo.ValueMember = "id_cargo";
+            cmbCargo.DisplayMember = "nombre_cargo";
+            cmbCargo.SelectedIndex = -1;
         }
 
         #endregion
@@ -43,14 +60,11 @@ namespace pjGestionEmpleados.Presentacion
         private void frmEmpleados_Load(object sender, EventArgs e)
         {
             CargarEmpleados("%");
+            CargarDepartamentos();
+            CargarCargos();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
-        {
-            CargarEmpleados(txtBuscar.Text);
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             CargarEmpleados(txtBuscar.Text);
         }
