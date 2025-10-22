@@ -9,3 +9,4 @@ C:\Users\andrea davila\Documents\Visual Studio 2022\Projects\SOL_GestionEmpleado
 C:\Users\andrea davila\Documents\Visual Studio 2022\Projects\SOL_GestionEmpleados\pjGestionEmpleados\obj\Debug\pjGestionEmpleados.exe
 C:\Users\andrea davila\Documents\Visual Studio 2022\Projects\SOL_GestionEmpleados\pjGestionEmpleados\obj\Debug\pjGestionEmpleados.pdb
 C:\Users\andrea davila\Documents\Visual Studio 2022\Projects\SOL_GestionEmpleados\pjGestionEmpleados\obj\Debug\pjGestionEmpleados.exe.config
+C:\Users\andrea davila\Documents\Visual Studio 2022\Projects\SOL_GestionEmpleados\pjGestionEmpleados\obj\Debug\pjGestionEmpleados.Presentacion.frmEmpleados.resources
