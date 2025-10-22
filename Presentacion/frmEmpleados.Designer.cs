@@ -360,6 +360,7 @@
             this.dgvLista.RowTemplate.Height = 24;
             this.dgvLista.Size = new System.Drawing.Size(940, 160);
             this.dgvLista.TabIndex = 20;
+            this.dgvLista.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLista_CellClick);
             // 
             // btnCancelar
             // 
